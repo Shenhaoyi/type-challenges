@@ -1,6 +1,7 @@
 // https://www.typescriptlang.org/docs/handbook/2/mapped-types.html
 
 // 用于在属性的类型没有或者无法事先定义的情况
+// in 操作符将联合类型当做数组一样访问
 
 // 1、指定该对象的属性必须是string类型，
 type MappedType = {
