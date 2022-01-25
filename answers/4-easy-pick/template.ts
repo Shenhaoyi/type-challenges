@@ -4,6 +4,6 @@ type MyPick<T, K extends keyof T> = {
 }
 // 步骤：
 // 1、返回对象 {}
-// 2、遍历key in
-// 3、匹配key extends keyof
+// 2、遍历key in  知识点：mapped-type
+// 3、匹配key extends keyof 
 // 4、复制对应类型 T[Key]
