@@ -36,3 +36,10 @@ type ConflictMyUnionType = string & { a: boolean }
 // }
 
 
+// 字面量类型与普通类型组合的联合类型 见：
+// combine these with non-literal types:
+// https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#literal-types
+type MyUnionMixture = 'shen' | number
+const myUnionMixture: MyUnionMixture = 1 // 字符串只能写'shen'，数字则随意
+
+// boolean 类型其实就是  true | false 的字面量联合类型
