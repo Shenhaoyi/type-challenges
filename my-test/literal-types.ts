@@ -35,3 +35,8 @@ type Literal4 = typeof literal5
 test(literal3.a as 1 | 2) // 1、进行断言
 test(literal5.a) // 2、将整个对象的类型变成只读类型
 
+
+// 字面量类型是普通类型的子类型？因为字面量类型的值能赋值给普通类型的值
+let aa = 'aa'
+const bb = 'bb'
+aa = bb
