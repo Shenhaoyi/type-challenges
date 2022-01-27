@@ -12,10 +12,15 @@ obj.c = any;
 // obj.c = unknown; 这里就会报错
 
 // void 表示没有任何类型，比如函数没有任何返回值
-const myVoid = function(): void {
+const myVoid = function (): void {
   console.log('xx')
   // return '' // 如果返回内容会报错
 }
 
-
 // undefined 和 null 只能取自己本身，可以看做是字面量
+
+//  never: 会抛出错误，或者永远不会有返回值的函数（比如死循环）
+function test(): never { 
+  // throw(new Error('dying'))
+  while(true) {}
+}
