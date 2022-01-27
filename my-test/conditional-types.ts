@@ -52,6 +52,7 @@ type MyReturnType = GetReturnType<()=>string>
 
 
 
-// 5、与联合类型，可以批量操作批量类型
+// 5、分配条件类型：与联合类型，可以批量操作批量类型
+// 这里的T对应联合类型中的每一项
 type Constraints3<T> = T extends any ? T[] : never
 type i = Constraints3<keyof d> // 联合类型批量变化
