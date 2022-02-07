@@ -6,8 +6,8 @@ function getName<T extends { name: string }>(obj: T): string {
   return obj.name
 }
 
-const obj = {
+const obj1 = {
   name: 'shenhaoyi'
 }
 
-console.log(getName(obj));
+console.log(getName(obj1));

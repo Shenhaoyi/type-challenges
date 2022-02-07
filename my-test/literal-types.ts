@@ -13,10 +13,10 @@ type Literal2 = typeof literal2 // 常量，被固定位特定字符串的string
 
 // 一般来说这种类型没有什么用，没事把string类型定义成只能设置为特定字符串好像没有什么用，直接 const 就能实现了
 // 唯一的用途就是用来组成联合类型，比如约束函数的输入参数只能在某几个值中取，像枚举类型一样
-function test(value: 1 | 2) {
+function test1(value: 1 | 2) {
   console.log('value:', value);
 }
-test(1) // 参数只能传1或者2
+test1(1) // 参数只能传1或者2
 
 
 // literal interface
@@ -32,11 +32,7 @@ type Literal4 = typeof literal5
 
 // 如果函数的参数只能从联合类型中取，而传入的参数是对象的属性，则需要对类型进行处理
 // test(literal3.a) 会报错，有两种解决方式：
-test(literal3.a as 1 | 2) // 1、进行断言
-test(literal5.a) // 2、将整个对象的类型变成只读类型
+test1(literal3.a as 1 | 2) // 1、进行断言
 
 
-// 字面量类型是普通类型的子类型？因为字面量类型的值能赋值给普通类型的值
-let aa = 'aa'
-const bb = 'bb'
-aa = bb
+
