@@ -48,7 +48,7 @@ type myFirst = MyFirst<[string, number, symbol]>
 type GetReturnType<Type> = Type extends () => infer Return
   ? Return
   : never;
-type MyReturnType = GetReturnType<()=>string>
+type MyReturnType1 = GetReturnType<()=>string>
 
 
 
