@@ -80,6 +80,10 @@ const mappedType7: MappedType7 = {
 type MappedType8 = {
   [key in keyof {a: string} as `${key & string}${key & string}`]: string
 }
+/*这里使用到的key & string 是取类型交叉
+  如果这里的对象不是字面量的话，key的类型可能是string | number | symbol
+  取交叉会将不同的类型舍弃?
+ */
 const mappedType8: MappedType8 = {
   aa: '2'
 }

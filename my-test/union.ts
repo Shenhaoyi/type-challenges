@@ -22,20 +22,6 @@ const b: MyObjectOfMyUnionType = {
 type MyUnionOr = string | undefined
 const c: MyUnionOr = '2'
 
-// 联合与，将两种类型进行合并
-type MyUnionAnd = { a: string } & { b: boolean }
-const d: MyUnionAnd = {
-  a: '1',
-  b: true,
-}
-// 如果两种类型冲突的话，好像两种类型都没法通过类型检测
-type ConflictMyUnionType = string & { a: boolean }
-// const e: ConflictMyUnionType = 'string'
-// const e: ConflictMyUnionType = {
-//   a: true
-// }
-
-
 // 字面量类型与普通类型组合的联合类型 见：
 // combine these with non-literal types:
 // https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#literal-types
