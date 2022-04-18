@@ -76,3 +76,10 @@ const mappedType7: MappedType7 = {
   b: 'string', 
 }
 
+// 5 重映射 via as(修改索引名称)
+type MappedType8 = {
+  [key in keyof {a: string} as `${key & string}${key & string}`]: string
+}
+const mappedType8: MappedType8 = {
+  aa: '2'
+}
