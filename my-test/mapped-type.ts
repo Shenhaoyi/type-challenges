@@ -78,12 +78,12 @@ type MappedType7 = {
 }
 const mappedType7: MappedType7 = {
   a: 'string',
-  b: 'string', 
+  b: 'string',
 }
 
 // 5 重映射 via as(修改索引名称)
 type MappedType8 = {
-  [key in keyof {a: string} as `${key & string}${key & string}`]: string
+  [key in keyof { a: string } as `${key & string}${key & string}`]: string
 }
 /*这里使用到的key & string 是取类型交叉
   如果这里的对象不是字面量的话，key的类型可能是string | number | symbol
@@ -92,3 +92,11 @@ type MappedType8 = {
 const mappedType8: MappedType8 = {
   aa: '2'
 }
+
+// 6 索引过滤（from https://juejin.cn/book/7047524421182947366/section/7048282176701333508）
+// 索引为never时，会被去掉
+type FilterByValueType<Obj extends Record<string, any>, ValueType> = {
+  [Key in keyof Obj as (ValueType extends Obj[Key] ? Key : never)] : Obj[Key]
+}
+
+type testFilterByValueType = FilterByValueType<{a: string, b: number}, string>
