@@ -3,9 +3,7 @@
     "strict": true,
     "target": "es2015",
     "moduleResolution": "node",
-    },
-  "exclude": [
-    "node_modules",
-    "questions"
-  ]
+    "noEmit": true
+  },
+  "exclude": ["node_modules", "questions"]
 }
