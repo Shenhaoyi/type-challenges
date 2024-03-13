@@ -6,7 +6,6 @@ type cases = [
 ]
 
 // @ts-expect-error
-// TODO: 无法检测null的情况
 type error = If<null, 'a', 'b'>
 
 // null 属于真值
