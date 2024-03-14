@@ -5,8 +5,9 @@ type DeepReadonly<T extends object> = {
       : DeepReadonly<T[key]>
     : T[key];
 };
-// 判断是否有属性的方式 keyof T[key] extends never
-// type DeepReadonly2<T> = {
+
+// 2、通过判断是否有属性的方式 keyof T[key] extends never
+// type DeepReadonly<T> = {
 //   +readonly [key in keyof T]: keyof T[key] extends never
 //   ? T[key]
 //   : DeepReadonly<T[key]> // 这里的类型检测不通过，判断不了是否为object
